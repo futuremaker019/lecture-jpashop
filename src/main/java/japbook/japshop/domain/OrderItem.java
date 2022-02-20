@@ -19,9 +19,9 @@ public class OrderItem {
     private Item item;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="order_id")
+    @JoinColumn(name="order_id")        // 테이블의 외례키
     private Order order;
 
-    private int orderPrice;
-    private int count;
+    private int orderPrice; // 주문 가격
+    private int count;      // 주문 수량
 }

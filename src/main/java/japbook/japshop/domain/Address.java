@@ -4,7 +4,7 @@ import lombok.Getter;
 
 import javax.persistence.Embeddable;
 
-@Embeddable
+@Embeddable  // 내장 타입이라는 것을 명시
 @Getter
 public class Address {
 
