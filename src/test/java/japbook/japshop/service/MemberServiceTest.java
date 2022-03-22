@@ -22,7 +22,6 @@ class MemberServiceTest {
     // flush를 통해서 디비에 인서트문을 볼수 있다. 기본적인 persist로는 디비에 등록이 안됨
     @Autowired EntityManager em;
 
-
     @Test
 //    @Rollback(false)
     public void 회원가입() throws Exception {
