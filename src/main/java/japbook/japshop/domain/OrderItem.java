@@ -1,13 +1,16 @@
 package japbook.japshop.domain;
 
 import japbook.japshop.domain.item.Item;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderItem {
 
     @Id @GeneratedValue
@@ -24,6 +27,13 @@ public class OrderItem {
 
     private int orderPrice; // 주문 가격
     private int count;      // 주문 수량
+
+    /**
+     *  protected를 생성자의 접근제어자로 설정하여 생성 메서드외의 OrderItem의 객체를 생성하지 못하게 막는다.
+     *  @NoArgsConstructor(access = AccessLevel.PROTECTED) 를 이용하여 간단하게 설정할 수 있다.
+     */
+//    protected OrderItem() {
+//    }
 
     //== 생성 메서드 ==/
     public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
